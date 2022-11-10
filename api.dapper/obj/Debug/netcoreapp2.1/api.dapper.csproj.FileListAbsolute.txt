@@ -1,0 +1,14 @@
+C:\Users\hoang\source\repos\api.dapper\api.dapper\bin\Debug\netcoreapp2.1\api.dapper.deps.json
+C:\Users\hoang\source\repos\api.dapper\api.dapper\bin\Debug\netcoreapp2.1\api.dapper.runtimeconfig.json
+C:\Users\hoang\source\repos\api.dapper\api.dapper\bin\Debug\netcoreapp2.1\api.dapper.runtimeconfig.dev.json
+C:\Users\hoang\source\repos\api.dapper\api.dapper\bin\Debug\netcoreapp2.1\api.dapper.dll
+C:\Users\hoang\source\repos\api.dapper\api.dapper\bin\Debug\netcoreapp2.1\api.dapper.pdb
+C:\Users\hoang\source\repos\api.dapper\api.dapper\obj\Debug\netcoreapp2.1\api.dapper.csprojAssemblyReference.cache
+C:\Users\hoang\source\repos\api.dapper\api.dapper\obj\Debug\netcoreapp2.1\api.dapper.csproj.CoreCompileInputs.cache
+C:\Users\hoang\source\repos\api.dapper\api.dapper\obj\Debug\netcoreapp2.1\api.dapper.RazorAssemblyInfo.cache
+C:\Users\hoang\source\repos\api.dapper\api.dapper\obj\Debug\netcoreapp2.1\api.dapper.RazorAssemblyInfo.cs
+C:\Users\hoang\source\repos\api.dapper\api.dapper\obj\Debug\netcoreapp2.1\api.dapper.AssemblyInfoInputs.cache
+C:\Users\hoang\source\repos\api.dapper\api.dapper\obj\Debug\netcoreapp2.1\api.dapper.AssemblyInfo.cs
+C:\Users\hoang\source\repos\api.dapper\api.dapper\obj\Debug\netcoreapp2.1\api.dapper.RazorTargetAssemblyInfo.cache
+C:\Users\hoang\source\repos\api.dapper\api.dapper\obj\Debug\netcoreapp2.1\api.dapper.dll
+C:\Users\hoang\source\repos\api.dapper\api.dapper\obj\Debug\netcoreapp2.1\api.dapper.pdb
