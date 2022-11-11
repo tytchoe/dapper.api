@@ -35,7 +35,7 @@ namespace api.dapper.Controllers
             }
         }
 
-        [HttpGet("{id}", Name = "CompanyById")]
+        [HttpGet("{id}", Name = "CompanyId")]
         public async Task<IActionResult> GetCompany(int id)
         {
             try
@@ -59,7 +59,7 @@ namespace api.dapper.Controllers
             try
             {
                 var createdCompany = await _companyRepo.CreateCompany(company);
-                return CreatedAtRoute("CompanyById", new { id = createdCompany.Id }, createdCompany);
+                return CreatedAtRoute("CompanyId", new { id = createdCompany.Id }, createdCompany);
             }
             catch (Exception ex)
             {

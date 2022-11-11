@@ -1,4 +1,5 @@
-﻿using api.dapper.Entitites;
+﻿using api.dapper.Dto;
+using api.dapper.Entitites;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,6 @@ namespace api.dapper.Contracts
         Task<List<Order>> GetOrderMapping();
         Task<List<Order>> GetOrderLineMapping();
         Task<List<Order>> GetAllMapping(int id);
+        Task<Order> CreateOrder(OrderForCreationDto order);
     }
 }

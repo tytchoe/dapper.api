@@ -1,9 +1,11 @@
 ﻿using api.dapper.Context;
 using api.dapper.Contracts;
+using api.dapper.Dto;
 using api.dapper.Entitites;
 using Dapper;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -16,6 +18,30 @@ namespace api.dapper.Repository
         public OrderRepository(DapperContext context)
         {
             _context = context;
+        }
+
+        public async Task<Order> CreateOrder(OrderForCreationDto order)
+        {
+            var query = "Insert into Orders(CustomerId,Status) VALUES (@CustomerId, @Status)" +
+                "SELECT CAST(SCOPE_IDENTITY() as int)";
+
+            var parameters = new DynamicParameters();
+            parameters.Add("CustomerId", order.CustomerId, DbType.Int32);
+            parameters.Add("Status", order.Status, DbType.String);
+
+            using (var connection = _context.CreateConnection())
+            {
+                var id = await connection.QuerySingleAsync<int>(query, parameters);
+
+                var createdOrder = new Order
+                {
+                    Id = id,
+                    CustomerId = order.CustomerId,
+                    Status = order.Status,
+                };
+
+                return createdOrder;
+            }
         }
 
         public async Task<List<Order>> GetAllMapping(int id)

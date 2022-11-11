@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using api.dapper.Contracts;
+using api.dapper.Dto;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -59,6 +60,21 @@ namespace api.dapper.Controllers
                 var order = await _orderRepo.GetAllMapping(id);
 
                 return Ok(order);
+            }
+            catch (Exception ex)
+            {
+                //log error
+                return StatusCode(500, ex.Message);
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateOrder(OrderForCreationDto order)
+        {
+            try
+            {
+                var createdOrder = await _orderRepo.CreateOrder(order);
+                return StatusCode(200, "Thêm mới thành công");
             }
             catch (Exception ex)
             {
