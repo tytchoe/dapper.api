@@ -150,5 +150,18 @@ namespace api.dapper.Repository
                 return companies.Distinct().ToList();
             }
         }
+
+        public  async Task DeleteCompanyUpdate(int id)
+        {
+            var procedureName = "deleteCompany";
+            var parameters = new DynamicParameters();
+            parameters.Add("Id", id, DbType.Int32, ParameterDirection.Input);
+
+            using (var connection = _context.CreateConnection())
+            {
+                await connection.QueryFirstOrDefaultAsync<Company>
+                    (procedureName, parameters, commandType: CommandType.StoredProcedure);
+            }
+        }
     }
 }

@@ -79,7 +79,7 @@ namespace api.dapper.Controllers
                     return NotFound();
 
                 await _companyRepo.UpdateCompany(id, company);
-                return NoContent();
+                return StatusCode(200, "Cập nhật thành công");
             }
             catch (Exception ex)
             {
@@ -117,6 +117,25 @@ namespace api.dapper.Controllers
                     return NotFound();
 
                 return Ok(company);
+            }
+            catch (Exception ex)
+            {
+                //log error
+                return StatusCode(500, ex.Message);
+            }
+        }
+
+        [HttpGet("{id}/delete")]
+        public async Task<IActionResult> DeleteCompanyUpdate(int id)
+        {
+            try
+            {
+                var dbCompany = await _companyRepo.GetCompany(id);
+                if (dbCompany == null)
+                    return NotFound();
+
+                await _companyRepo.DeleteCompanyUpdate(id);
+                return NoContent();
             }
             catch (Exception ex)
             {

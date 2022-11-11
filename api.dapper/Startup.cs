@@ -30,6 +30,8 @@ namespace api.dapper
         {
             services.AddSingleton<DapperContext>();
             services.AddScoped<ICompanyRepository, CompanyRepository>();
+            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddMvc();
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

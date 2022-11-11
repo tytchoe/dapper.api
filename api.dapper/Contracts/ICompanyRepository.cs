@@ -17,5 +17,6 @@ namespace api.dapper.Contracts
         Task<Company> GetCompanyByEmployeeId(int id);
         Task<Company> GetCompanyEmployeesMultipleResults(int id);
         Task<List<Company>> GetCompaniesEmployeesMultipleMapping();
+        Task DeleteCompanyUpdate(int id);
     }
 }
